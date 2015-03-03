@@ -1,0 +1,5 @@
+{
+    "bucket" : "default",
+    "host" : [ "localhost:8091" ]
+}
+

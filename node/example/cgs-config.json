@@ -1,0 +1,29 @@
+{
+    "log" : ["Access","Auth", "HTTP", "CRUD", "CRUD+"],
+    "interface":"localhost:4984",
+    "adminInterface":":4985",
+    "databases":{
+        "example_db":{
+            "server":"http://localhost:8091",
+            "bucket":"sync_gateway",
+            "sync": `function(doc) {channel(doc.channels);}`,
+            "users": {
+	            "sean" : {
+	                "admin_channels": ["all"],
+	                "admin_roles" : ["admins"],
+	                "password" : "12345"
+	            },
+	            "GUEST" : {
+	                "disabled" : false,
+	                "admin_channel": ["*"]
+	            }
+	        },
+	        "roles" : {
+	            "admins" : {
+	                "admin_channels" : ["example_channel"]
+	            }
+	        }
+  
+         }    
+    }
+}

@@ -1,0 +1,43 @@
+curl -i -X POST -H 'Content-Type: application/json' -d '{"type":"user_info", "user_id": "sean2@gmail.com", "name": "Sean Park2", "birth": "1971"}' http://localhost:3000/users
+curl -i -X POST -H 'Content-Type: application/json' -d '{"type":"user_info", "user_id": "sean3@gmail.com", "name": "Sean Park3", "birth": "1971"}' http://localhost:3000/users
+curl -i -X POST -H 'Content-Type: application/json' -d '{"type":"user_info", "user_id": "sean4@gmail.com", "name": "Sean Park4", "birth": "1971"}' http://localhost:3000/users
+curl -i -X POST -H 'Content-Type: application/json' -d '{"type":"user_info", "user_id": "sean5@gmail.com", "name": "Sean Park5", "birth": "1971"}' http://localhost:3000/users/secure
+
+
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"type":"user_info", "user_id": "sean2@gmail.com", "name": "Sean Park2", "birth": "1972"}' http://localhost:3000/users/sean2@gmail.com
+
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"type":"user_info", "user_id": "sean2@gmail.com", "name": "Sean Park2", "birth": "1972"}' http://localhost:3000/users/ttl/sean2@gmail.com
+
+
+curl -i -X DELETE -H 'Content-Type: application/json'  http://localhost:3000/users/sean2@gmail.com
+
+curl -i -X GET -H 'Content-Type: application/json'  http://localhost:3000/users/sean2@gmail.com
+
+curl -i -X GET -H 'Content-Type: application/json'  http://localhost:3000/users/lock/sean2@gmail.com
+
+curl -i -X GET -H 'Content-Type: application/json'  http://localhost:3000/users/touch/sean2@gmail.com
+
+curl -i -X GET -H 'Content-Type: application/json'  http://localhost:3000/users/quickcheck/sean10@gmail.com
+
+curl -i -X GET -H 'Content-Type: application/json'  http://localhost:3000/users
+
+curl -i -X POST -H 'Content-Type: application/json' -d '["sean2@gmail.com", "sean3@gmail.com"]' http://localhost:3000/users/selected
+
+curl -i -X POST -H 'Content-Type: application/json' -d '{"type":"user_info", "user_id": "sean5@gmail.com", "name": "Sean Park2", "birth": "1971"}' http://localhost:3000/users/sequence
+
+curl -i -X GET -H 'Content-Type: application/json'  http://localhost:3000/n1query
+
+curl -i -X POST -H 'Content-Type: application/json' -d '{"type":"account", "account_id": "account-sean", "name": "Sean", "amount": 20000, "transactionList":[]}' http://localhost:3000/accounts
+
+curl -i -X POST -H 'Content-Type: application/json' -d '{"type":"account", "account_id": "account-yong", "name": "Yong", "amount": 50000, "transactionList":[]}' http://localhost:3000/accounts
+
+curl -i -X POST -H 'Content-Type: application/json' -d '{"type":"transaction", "account_from": "account-sean", "account_to": "account-yong", "money": 10}' http://localhost:3000/transaction
+
+
+curl -i -XPOST http://127.0.0.1:9200/beer-sample/couchbaseDocument/_search?q=beer
+
+curl -i -X PUT -H 'Content-Type: application/json' -d @cgs-user.json http://localhost:4985/example_db/_user/sean2
+
+curl -i -X GET -H 'Content-Type: application/json'  http://localhost:3000/views/create
+
+curl -i -X GET -H 'Content-Type: application/json'  http://localhost:1337/beers/search/512

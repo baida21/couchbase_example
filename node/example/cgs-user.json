@@ -1,0 +1,9 @@
+{
+	"name" : "sean2",
+	"password" : "12345",
+	"admin_channels" : [ "example_channel"],
+	"admin_roles" : [ "admins"],
+	"disabled" : false,
+	"email": "sean2@gmail.com"
+}
+
